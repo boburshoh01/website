@@ -1,10 +1,14 @@
 <template>
   <AboutSectionComponent
-    title="Наши услуги и кейсы"
-    description="В сотрудничестве с вами мы создаем программный продукт, функциональные возможности которого полностью отвечают уникальным потребностям вашего бизнеса и особенностям услуг. Накопленный опыт, экспертиза и знания в разработке программного обеспечения на заказ позволяют нам выбирать оптимальные технические решения и оперативно собирать требования. Это обеспечивает быстрый старт проекта, сокращение сроков работ и бюджета на разработку информационного продукта."
+    :title="t('Наши услуги и кейсы')"
+    :description="
+      t(
+        'В сотрудничестве с вами мы создаем программный продукт, функциональные возможности которого полностью отвечают уникальным потребностям вашего бизнеса и особенностям услуг. Накопленный опыт, экспертиза и знания в разработке программного обеспечения на заказ позволяют нам выбирать оптимальные технические решения и оперативно собирать требования. Это обеспечивает быстрый старт проекта, сокращение сроков работ и бюджета на разработку информационного продукта.'
+      )
+    "
   >
     <template #services>
-      <div class="grid grid-cols-5 gap-4 mb-8">
+      <div class="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 mb-8">
         <button
           v-for="category in categories"
           :key="category.text"
@@ -19,6 +23,7 @@
           {{ category.text }}
         </button>
       </div>
+
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <div
           v-for="image in caseStudies"
@@ -39,22 +44,28 @@
 </template>
 
 <script setup>
+import texnomed from "@/assets/images/texnomed.png";
+import ombudsman from "@/assets/images/ombudsman.png";
+import shotfaktura from "@/assets/images/shotfaktura.png";
+import project from "@/assets/images/project.png";
+import { useI18n } from "vue-i18n";
+const { t } = useI18n();
 const categories = [
-  { text: "Все" },
-  { text: "ИТ-консалтинг" },
-  { text: "Прототипирование" },
-  { text: "Заказная разработка ПО" },
-  { text: "Виртуализация" },
-  { text: "Независимое тестирование" },
-  { text: "Информационная безопасность" },
-  { text: "Сопровождение и поддержка" },
-  { text: "Миграция ПО" },
-  { text: "Интеграция приложений" },
+  { text: t("Все") },
+  { text: t("ИТ-консалтинг") },
+  { text: t("Прототипирование") },
+  { text: t("Заказная разработка ПО") },
+  { text: t("Виртуализация") },
+  { text: t("Независимое тестирование") },
+  { text: t("Информационная безопасность") },
+  { text: t("Сопровождение и поддержка") },
+  { text: t("Миграция ПО") },
+  { text: t("Интеграция приложений") },
 ];
 const caseStudies = [
-  { src: "~assets/images/texnomed.png", alt: "texnomed" },
-  { src: "~assets/images/ombudsman.png", alt: "ombudsman" },
-  { src: "~assets/images/shotfaktura.png", alt: "shotfaktura 3" },
-  { src: "~assets/images/project.png", alt: "project" },
+  { src: texnomed, alt: t("texnomed") },
+  { src: ombudsman, alt: t("ombudsman") },
+  { src: shotfaktura, alt: t("shotfaktura") },
+  { src: project, alt: t("project") },
 ];
 </script>

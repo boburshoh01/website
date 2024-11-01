@@ -2,12 +2,13 @@
   <div class="p-10 text-gray-800">
     <!-- Header Section -->
     <div class="text-center mb-10">
-      <h2 class="text-3xl font-bold mb-4">Полный цикл разработки</h2>
+      <h2 class="text-3xl font-bold mb-4">{{ t("Полный цикл разработки") }}</h2>
       <p class="text-gray-600 mx-auto">
-        Вне зависимости от типа и технологической сложности решения, мы
-        обеспечим качественную реализацию функциональности, высокую доступность
-        и производительность системы, а также привлекательный дизайн и
-        безупречное удобство пользования.
+        {{
+          t(
+            "Вне зависимости от типа и технологической сложности решения, мы обеспечим качественную реализацию функциональности, высокую доступность и производительность системы, а также привлекательный дизайн и безупречное удобство пользования."
+          )
+        }}
       </p>
     </div>
 
@@ -16,8 +17,10 @@
       <!-- Top Row of Cards -->
       <div class="grid grid-cols-1 md:grid-cols-5 gap-6 mb-0">
         <ProcessCard
-          title="Консалтинг"
-          description="Вне зависимости от типа и технологической сложности решения"
+          :title="t('Консалтинг')"
+          :description="
+            t('Вне зависимости от типа и технологической сложности решения')
+          "
         >
           <template #icon>
             <svg
@@ -37,8 +40,10 @@
           </template>
         </ProcessCard>
         <ProcessCard
-          title="Бизнес-анализ"
-          description="Вне зависимости от типа и технологической сложности решения"
+          :title="t('Бизнес-анализ')"
+          :description="
+            t('Вне зависимости от типа и технологической сложности решения')
+          "
         >
           <template #icon>
             <svg
@@ -64,8 +69,10 @@
           </template>
         </ProcessCard>
         <ProcessCard
-          title="Прототипирование"
-          description="Вне зависимости от типа и технологической сложности решения"
+          :title="t('Прототипирование')"
+          :description="
+            t('Вне зависимости от типа и технологической сложности решения')
+          "
         >
           <template #icon>
             <svg
@@ -103,8 +110,10 @@
           </template>
         </ProcessCard>
         <ProcessCard
-          title="Графический дизайн"
-          description="Вне зависимости от типа и технологической сложности решения"
+          :title="t('Графический дизайн')"
+          :description="
+            t('Вне зависимости от типа и технологической сложности решения')
+          "
         >
           <template #icon>
             <svg
@@ -136,8 +145,10 @@
           </template>
         </ProcessCard>
         <ProcessCard
-          title="Разработка с нуля"
-          description="Вне зависимости от типа и технологической сложности решения"
+          :title="t('Разработка с нуля')"
+          :description="
+            t('Вне зависимости от типа и технологической сложности решения')
+          "
         >
           <template #icon>
             <svg
@@ -156,6 +167,7 @@
         </ProcessCard>
       </div>
       <svg
+        class="w-full lg:max-w-[1400px] md:max-w-[1200px] sm:max-w-[700px]"
         width="1400"
         height="82"
         viewBox="0 0 1500 82"
@@ -185,6 +197,7 @@
 
       <!-- Bottom Row of Cards -->
       <svg
+        class="w-full lg:max-w-[1400px] md:max-w-[1200px] sm:max-w-[700px]"
         width="1400"
         height="82"
         viewBox="0 0 1500 82"
@@ -205,8 +218,10 @@
 
       <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
         <ProcessCard
-          title="Разработка мобильных проектов"
-          description="Вне зависимости от типа и технологической сложности решения"
+          :title="t('Разработка мобильных проектов')"
+          :description="
+            t('Вне зависимости от типа и технологической сложности решения')
+          "
         >
           <template #icon>
             <svg
@@ -224,8 +239,10 @@
           </template>
         </ProcessCard>
         <ProcessCard
-          title="Костамизация готовых решений"
-          description="Вне зависимости от типа и технологической сложности решения"
+          :title="t('Костамизация готовых решений')"
+          :description="
+            t('Вне зависимости от типа и технологической сложности решения')
+          "
         >
           <template #icon>
             <svg
@@ -247,8 +264,10 @@
           </template>
         </ProcessCard>
         <ProcessCard
-          title="Функциональное усовершенствование"
-          description="Вне зависимости от типа и технологической сложности решения"
+          :title="t('Функциональное усовершенствование')"
+          :description="
+            t('Вне зависимости от типа и технологической сложности решения')
+          "
         >
           <template #icon>
             <svg
@@ -270,8 +289,10 @@
           </template>
         </ProcessCard>
         <ProcessCard
-          title="Миграция приложений и данных"
-          description="Вне зависимости от типа и технологической сложности решения"
+          :title="t('Миграция приложений и данных')"
+          :description="
+            t('Вне зависимости от типа и технологической сложности решения')
+          "
         >
           <template #icon>
             <svg
@@ -297,8 +318,10 @@
           </template>
         </ProcessCard>
         <ProcessCard
-          title="Сопровождение и поддержка"
-          description="Вне зависимости от типа и технологической сложности решения"
+          :title="t('Сопровождение и поддержка')"
+          :description="
+            t('Вне зависимости от типа и технологической сложности решения')
+          "
         >
           <template #icon>
             <svg
@@ -323,9 +346,12 @@
     <!-- Call to Action Button -->
     <div class="flex justify-center mt-8">
       <button class="bg-black text-white py-3 px-6 rounded-full font-semibold">
-        Оставьте заявку
+        {{ t("Оставьте заявку") }}
       </button>
     </div>
   </div>
 </template>
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useI18n } from "vue-i18n";
+const { t } = useI18n();
+</script>

@@ -17,6 +17,7 @@ export default defineNuxtConfig({
           { code: "uz_cryl", name: "Ўзбек", file: "uz_cryl.json" },
           { code: "ru", name: "Русский", file: "ru.json" },
         ],
+
       },
     ],
   ],

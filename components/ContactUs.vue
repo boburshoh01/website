@@ -1,16 +1,17 @@
 <template>
   <div class="p-10 text-gray-800">
     <div class="text-center mb-10">
-      <h2 class="text-3xl font-bold mb-4">Связаться с нами</h2>
+      <h2 class="text-3xl font-bold mb-4">{{ t("Связаться с нами") }}</h2>
       <p class="text-gray-600 mx-auto">
-        Вне зависимости от типа и технологической сложности решения, мы
-        обеспечим качественную реализацию функциональности, высокую доступность
-        и производительность системы, а также привлекательный дизайн и
-        безупречное удобство пользования.
+        {{
+          t(
+            "Вне зависимости от типа и технологической сложности решения, мы обеспечим качественную реализацию функциональности, высокую доступность и производительность системы, а также привлекательный дизайн и безупречное удобство пользования."
+          )
+        }}
       </p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
-      <ContactCard title="Номер телефона" content="+998 99 4447929">
+      <ContactCard :title="t('Номер телефона')" content="+998 99 4447929">
         <template #icon>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -31,7 +32,7 @@
         </template>
       </ContactCard>
 
-      <ContactCard title="Электронный адрес" content="webaseuz@gmail.com">
+      <ContactCard :title="t('Электронный адрес')" content="webaseuz@gmail.com">
         <template #icon>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -51,7 +52,7 @@
       </ContactCard>
 
       <ContactCard
-        title="Адрес"
+        :title="t('Адрес')"
         content="Массив Караташ, д. 106 Шайхонтохурский р."
       >
         <template #icon>
@@ -84,22 +85,22 @@
       >
         <!-- Using the InputField component -->
         <InputField
-          label="Имя"
-          placeholder="Введите ваше имя"
+          :label="t('Имя')"
+          :placeholder="t('Введите ваше имя')"
           v-model="form.name"
           id="name"
         />
         <InputField
-          label="Адрес электронной почты"
+          :label="t('Адрес электронной почты')"
           type="email"
-          placeholder="Введите ваш email"
+          :placeholder="t('Введите ваш email')"
           v-model="form.email"
           id="email"
           :error="emailError"
         />
         <InputField
-          label="Тема"
-          placeholder="Введите тему"
+          :label="t('Тема')"
+          :placeholder="t('Введите тему')"
           v-model="form.subject"
           id="subject"
           class="col-span-2"
@@ -111,22 +112,22 @@
           <textarea
             id="message"
             v-model="form.message"
-            placeholder="Введите ваше сообщение"
+            :placeholder="t('Введите ваше сообщение')"
             rows="4"
             class="w-full p-2 rounded-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           ></textarea>
         </div>
         <div class="flex items-center mb-4 col-span-2">
           <input type="checkbox" id="terms" v-model="form.agree" class="mr-2" />
-          <label for="terms" class="text-sm"
-            >Я принимаю условия и положения отправки заявки</label
-          >
+          <label for="terms" class="text-sm">{{
+            t("Я принимаю условия и положения отправки заявки")
+          }}</label>
         </div>
         <button
           @click="submitForm"
           class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-full font-semibold"
         >
-          Оставьте заявку
+          {{ t("Оставьте заявку") }}
         </button>
       </div>
 
@@ -134,11 +135,11 @@
         <a
           href="https://yandex.uz/maps/org/webase/12440057066/?utm_medium=mapframe&utm_source=maps"
           style="color: #eee; font-size: 12px; position: absolute; top: 0px"
-          >Webase</a
+          >{{ t("Webase") }}</a
         ><a
           href="https://yandex.uz/maps/10335/tashkent/category/it_company/184106174/?utm_medium=mapframe&utm_source=maps"
           style="color: #eee; font-size: 12px; position: absolute; top: 14px"
-          >IT-компания в Ташкенте</a
+          >{{ t("IT-компания в Ташкенте") }}</a
         ><iframe
           src="https://yandex.uz/map-widget/v1/?from=mapframe&ll=69.237678%2C41.314165&mode=search&oid=12440057066&ol=biz&z=17.08"
           width="100%"
@@ -154,6 +155,8 @@
 
 <script setup>
 import { reactive, ref } from "vue";
+import { useI18n } from "vue-i18n";
+const { t } = useI18n();
 
 const form = reactive({
   name: "",
