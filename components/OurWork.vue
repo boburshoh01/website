@@ -1,7 +1,7 @@
 <template>
   <div class="">
     <!-- Header Section -->
-    <div class="mb-8 flex">
+    <div class="mb-8 flex animate-slide-right opacity-0">
       <h2 class="text-[48px] font-bold">
         {{ t("Обеспечьте лучший сервис, используя нестандартные идеи") }}
       </h2>
@@ -18,7 +18,7 @@
     <div class="grid grid-cols-12 gap-6">
       <!-- Left Card (Projects Completed) -->
       <div
-        class="bg-gray-900 text-white rounded-3xl p-6 flex flex-col justify-between col-span-12 md:col-span-3 relative"
+        class="bg-gray-900 text-white rounded-3xl p-6 flex flex-col justify-between col-span-12 md:col-span-3 relative animate-slide-left opacity-0 delay-500"
       >
         <div>
           <div class="text-[90px] font-bold">
@@ -57,7 +57,9 @@
       </div>
 
       <!-- Right Card (How We Work) -->
-      <div class="relative col-span-12 md:col-span-9">
+      <div
+        class="relative col-span-12 md:col-span-9 animate-slide-right opacity-0 delay-1000"
+      >
         <img
           class="rounded-3xl object-cover h-full w-full"
           src="~assets/images/howwework.png"
@@ -79,7 +81,44 @@
     </div>
   </div>
 </template>
+
 <script setup>
 import { useI18n } from "vue-i18n";
 const { t } = useI18n();
 </script>
+
+<style>
+@keyframes slide-left {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-right {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-left {
+  animation: slide-left 1s ease-out forwards;
+}
+
+.animate-slide-right {
+  animation: slide-right 1s ease-out forwards;
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+</style>

@@ -1,5 +1,21 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  app: {
+    head: {
+      title: 'Webase - Leading IT Solutions for Web & Mobile Apps',
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { name: 'description', content: 'Webase is an innovative IT company specializing in web apps, mobile apps, and other digital solutions tailored to meet modern business needs.' },
+        { name: 'keywords', content: 'Webase, IT company, web apps, mobile apps, digital transformation' },
+        { name: 'robots', content: 'index, follow' } // Allows search engines to index the site
+      ],
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        { rel: 'canonical', href: 'https://webase.uz' } // Canonical link to avoid duplicate content
+      ]
+    }
+  },
   compatibilityDate: "2024-04-03",
   devtools: { enabled: true },
   css: ['@/assets/main.css'],

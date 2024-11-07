@@ -92,4 +92,40 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
 const { t } = useI18n();
+useHead({
+  title: "About Us - Webase IT Solutions",
+  meta: [
+    {
+      name: "description",
+      content:
+        "Learn more about Webase, an IT company specializing in web and mobile applications.",
+    },
+    {
+      name: "keywords",
+      content: "Webase, about us, IT solutions, web apps, mobile apps",
+    },
+    { property: "og:title", content: "About Us - Webase IT Solutions" },
+    {
+      property: "og:description",
+      content:
+        "Learn more about Webase and our expertise in web and mobile app development.",
+    },
+    { property: "og:type", content: "website" },
+    { property: "og:url", content: "https://webase.uz/#about" },
+    {
+      property: "og:image",
+      content: "https://webase.uz/#about-image.jpg",
+    },
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:title", content: "About Us - Webase IT Solutions" },
+    {
+      name: "twitter:description",
+      content: "Learn more about Webase and our IT solutions.",
+    },
+    {
+      name: "twitter:image",
+      content: "https://webase.uz/#about-image.jpg",
+    },
+  ],
+});
 </script>
