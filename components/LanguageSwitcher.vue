@@ -2,20 +2,22 @@
   <div class="relative inline-block text-left">
     <button
       @click="toggleDropdown"
-      class="inline-flex justify-center w-full rounded-full bg-black text-white shadow-sm px-4 py-2 text-sm font-medium text-[16px]nvm"
+      class="inline-flex justify-between items-center gap-1 w-full rounded-full bg-black text-white border border-black hover:border-[#246FFF] shadow-sm px-4 py-2 text-sm font-medium text-[16px]nvm"
     >
       {{ currentLocaleName }}
 
       <svg
-        class="-mr-1 ml-2 h-5 w-5"
         xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 20 20"
-        fill="currentColor"
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
       >
         <path
-          fill-rule="evenodd"
-          d="M5.293 7.707a1 1 0 011.414 0L10 11.414l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-          clip-rule="evenodd"
+          d="M12.6667 5.66675L8 10.3334L3.33333 5.66675"
+          stroke="white"
+          stroke-width="1.5"
+          stroke-linecap="square"
         />
       </svg>
     </button>
@@ -50,7 +52,7 @@ const availableLocales = computed(() => {
 
 const currentLocaleName = computed(() => {
   const current = locales.value.find((i) => i.code === locale.value);
-  return current ? current.name : "";
+  return current ? current.shortName : "";
 });
 
 const toggleDropdown = () => {

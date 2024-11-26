@@ -1,9 +1,11 @@
 <template>
-  <div class="p-10 text-gray-800">
+  <div class="sm:p-10 text-gray-800">
     <!-- Header Section -->
     <div class="text-center mb-10">
-      <h2 class="text-3xl font-bold mb-4">{{ t("Полный цикл разработки") }}</h2>
-      <p class="text-gray-600 mx-auto">
+      <h2 class="text-[24px] sm:text-[48px] font-bold mb-4">
+        {{ t("Полный цикл разработки") }}
+      </h2>
+      <p class="text-gray-600 mx-auto" v-if="!$isMobile">
         {{
           t(
             "Вне зависимости от типа и технологической сложности решения, мы обеспечим качественную реализацию функциональности, высокую доступность и производительность системы, а также привлекательный дизайн и безупречное удобство пользования."
@@ -13,9 +15,9 @@
     </div>
 
     <!-- Process Flow Grid -->
-    <div class="relative bg-gray-100 rounded-xl shadow-lg p-8">
+    <div class="relative bg-gray-100 rounded-xl p-4 sm:p-8">
       <!-- Top Row of Cards -->
-      <div class="grid grid-cols-1 md:grid-cols-5 gap-6 mb-0">
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-3 sm:gap-6 mb-0">
         <ProcessCard
           :title="t('Консалтинг')"
           :description="
@@ -25,8 +27,7 @@
           <template #icon>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="48"
-              height="48"
+              class="w-[24px] h-[24px] sm:w-[48px] sm:h-[48px]"
               viewBox="0 0 48 48"
               fill="none"
             >
@@ -48,9 +49,8 @@
           <template #icon>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="49"
-              height="48"
-              viewBox="0 0 49 48"
+              class="w-[24px] h-[24px] sm:w-[48px] sm:h-[48px]"
+              viewBox="0 0 48 48"
               fill="none"
             >
               <path
@@ -77,9 +77,8 @@
           <template #icon>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="49"
-              height="48"
-              viewBox="0 0 49 48"
+              class="w-[24px] h-[24px] sm:w-[48px] sm:h-[48px]"
+              viewBox="0 0 48 48"
               fill="none"
             >
               <path
@@ -118,9 +117,8 @@
           <template #icon>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="49"
-              height="48"
-              viewBox="0 0 49 48"
+              class="w-[24px] h-[24px] sm:w-[48px] sm:h-[48px]"
+              viewBox="0 0 48 48"
               fill="none"
             >
               <path
@@ -146,6 +144,7 @@
         </ProcessCard>
         <ProcessCard
           :title="t('Разработка с нуля')"
+          class="col-start-1 col-span-2"
           :description="
             t('Вне зависимости от типа и технологической сложности решения')
           "
@@ -153,9 +152,8 @@
           <template #icon>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="49"
-              height="48"
-              viewBox="0 0 49 48"
+              class="w-[24px] h-[24px] sm:w-[48px] sm:h-[48px]"
+              viewBox="0 0 48 48"
               fill="none"
             >
               <path
@@ -187,11 +185,11 @@
       </svg>
 
       <!-- Centered Logo with Arrows -->
-      <div class="flex justify-center items-center mb-3 mt-3">
+      <div class="flex justify-center items-center">
         <img
           src="~assets/images/logo.png"
           alt="WEBASE Logo"
-          class="w-60 h-30 object-contain"
+          class="w-64 h-32 object-contain"
         />
       </div>
 
@@ -216,8 +214,9 @@
         <path d="M1055 82V42" stroke="#5C77BB" stroke-width="3" />
       </svg>
 
-      <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
         <ProcessCard
+          class="col-start-1 col-span-2"
           :title="t('Разработка мобильных проектов')"
           :description="
             t('Вне зависимости от типа и технологической сложности решения')
@@ -226,8 +225,7 @@
           <template #icon>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="48"
-              height="48"
+              class="w-[24px] h-[24px] sm:w-[48px] sm:h-[48px]"
               viewBox="0 0 48 48"
               fill="none"
             >
@@ -247,9 +245,8 @@
           <template #icon>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="49"
-              height="48"
-              viewBox="0 0 49 48"
+              class="w-[24px] h-[24px] sm:w-[48px] sm:h-[48px]"
+              viewBox="0 0 48 48"
               fill="none"
             >
               <path
@@ -272,9 +269,8 @@
           <template #icon>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="49"
-              height="48"
-              viewBox="0 0 49 48"
+              class="w-[24px] h-[24px] sm:w-[48px] sm:h-[48px]"
+              viewBox="0 0 48 48"
               fill="none"
             >
               <path
@@ -297,9 +293,8 @@
           <template #icon>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="49"
-              height="48"
-              viewBox="0 0 49 48"
+              class="w-[24px] h-[24px] sm:w-[48px] sm:h-[48px]"
+              viewBox="0 0 48 48"
               fill="none"
             >
               <path
@@ -326,9 +321,8 @@
           <template #icon>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="49"
-              height="48"
-              viewBox="0 0 49 48"
+              class="w-[24px] h-[24px] sm:w-[48px] sm:h-[48px]"
+              viewBox="0 0 48 48"
               fill="none"
             >
               <path
@@ -345,8 +339,38 @@
 
     <!-- Call to Action Button -->
     <div class="flex justify-center mt-8">
-      <button class="bg-black text-white py-3 px-6 rounded-full font-semibold">
+      <button
+        @click="scrollToSection('#contacts')"
+        class="flex px-[32px] py-[17px] bg-black text-white rounded-full text-[16px] transition duration-300 ease-in-out hover:bg-[#246FFF]"
+      >
         {{ t("Оставьте заявку") }}
+        <svg
+          class=""
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+        >
+          <path
+            d="M19.999 12L3.99926 12"
+            stroke="white"
+            stroke-width="1.5"
+            stroke-linecap="square"
+          />
+          <path
+            d="M14.3394 17.66C14.3394 14.7503 16.9019 12 19.9994 12"
+            stroke="white"
+            stroke-width="1.5"
+            stroke-linecap="square"
+          />
+          <path
+            d="M14.3394 6.33995C14.3394 9.2497 16.9019 12 19.9994 12"
+            stroke="white"
+            stroke-width="1.5"
+            stroke-linecap="square"
+          />
+        </svg>
       </button>
     </div>
   </div>
@@ -354,4 +378,12 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
 const { t } = useI18n();
+const { $isMobile } = useNuxtApp();
+
+function scrollToSection(sectionId: any) {
+  const section = document.querySelector(sectionId);
+  if (section) {
+    section.scrollIntoView({ behavior: "smooth" });
+  }
+}
 </script>

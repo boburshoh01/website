@@ -1,6 +1,6 @@
 <template>
   <AboutSectionComponent
-    :title="t('О нас')"
+    :title="t('about')"
     :description="
       t(
         'В сотрудничестве с вами мы создаем программный продукт, функциональные возможности которого полностью отвечают уникальным потребностям вашего бизнеса и особенностям услуг. Накопленный опыт, экспертиза и знания в разработке программного обеспечения на заказ позволяют нам выбирать оптимальные технические решения и оперативно собирать требования.'
@@ -20,8 +20,7 @@
         <template #icon>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="40"
-            height="40"
+            class="w-[24px] h-[24px] sm:w-[40px] sm:h-[40px]"
             viewBox="0 0 40 40"
             fill="none"
           >
@@ -46,8 +45,7 @@
         <template #icon>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="40"
-            height="40"
+            class="w-[24px] h-[24px] sm:w-[40px] sm:h-[40px]"
             viewBox="0 0 40 40"
             fill="none"
           >
@@ -68,12 +66,12 @@
             'Создание удобного пользовательского интерфейса, который повысит степень удовлетворенности пользователей.'
           )
         "
+        class="z-10"
       >
         <template #icon>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="40"
-            height="40"
+            class="w-[24px] h-[24px] sm:w-[40px] sm:h-[40px]"
             viewBox="0 0 40 40"
             fill="none"
           >
@@ -92,6 +90,8 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
 const { t } = useI18n();
+const { $isMobile } = useNuxtApp();
+
 useHead({
   title: "About Us - Webase IT Solutions",
   meta: [

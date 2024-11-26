@@ -1,8 +1,10 @@
 <template>
-  <div class="p-10 text-gray-800">
+  <div class="p-1 sm:p-10 text-gray-800">
     <div class="text-center mb-10">
-      <h2 class="text-3xl font-bold mb-4">{{ t("Связаться с нами") }}</h2>
-      <p class="text-gray-600 mx-auto">
+      <h2 class="text-[24px] sm:text-[48px] font-bold mb-4">
+        {{ t("Связаться с нами") }}
+      </h2>
+      <p class="text-gray-600 mx-auto" v-if="!$isMobile">
         {{
           t(
             "Вне зависимости от типа и технологической сложности решения, мы обеспечим качественную реализацию функциональности, высокую доступность и производительность системы, а также привлекательный дизайн и безупречное удобство пользования."
@@ -81,14 +83,100 @@
     </div>
     <div class="grid grid-col-1 md:grid-cols-2 gap-4">
       <div
-        class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-gradient-to-r from-black to-blue-950 p-9 text-white rounded-2xl"
+        class="relative grid grid-cols-1 md:grid-cols-2 gap-6 bg-gradient-to-r from-black to-blue-950 p-9 text-white rounded-[24px]"
       >
-        <!-- Using the InputField component -->
+        <div class="absolute z-0 top-0 right-0">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-[146px] h-[277px] sm:w-[420px] sm:h-[172px]"
+            :viewBox="$isMobile ? '0 0 230 89' : '0 0 408 172'"
+            viewBox="0 0 408 172"
+            fill="none"
+          >
+            <path
+              opacity="0.2"
+              d="M5.65017 -4.31764C0.793603 -1.68562 -0.937398 4.37819 1.95058 9.1169C32.2651 58.8581 75.3446 100.089 126.976 128.658C181.576 158.87 243.612 173.744 306.219 171.636C368.827 169.528 429.566 150.519 481.717 116.712C531.023 84.7496 570.835 40.7373 597.27 -10.9031C599.789 -15.8228 597.524 -21.8232 592.405 -24.1553L490.952 -70.3774C485.93 -72.6652 480.052 -70.5532 477.495 -65.7722C461.352 -35.5987 437.658 -9.86043 408.551 9.008C376.675 29.6717 339.549 41.2906 301.281 42.5793C263.014 43.8679 225.095 34.776 191.722 16.3095C161.3 -0.523612 135.736 -24.5481 117.336 -53.4915C114.371 -58.1554 108.272 -59.9339 103.437 -57.3136L5.65017 -4.31764Z"
+              fill="url(#paint0_linear_1_18477)"
+            />
+            <defs>
+              <linearGradient
+                id="paint0_linear_1_18477"
+                x1="217.478"
+                y1="183.68"
+                x2="373.907"
+                y2="-3.66367"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stop-color="#010205" />
+                <stop offset="1" stop-color="#8DA7F3" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div class="absolute z-0 bottom-0 left-0" v-if="!$isMobile">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="388"
+            height="148"
+            viewBox="0 0 388 148"
+            fill="none"
+          >
+            <path
+              opacity="0.2"
+              d="M383.569 144.7C388.114 141.606 389.321 135.412 386.114 130.945C354.667 87.1448 312.684 52.1057 264.248 29.343C212.839 5.18335 156.166 -4.20497 100.497 2.21667C44.8285 8.6383 -7.66486 30.6196 -51.1756 65.7286C-92.1865 98.8204 -123.71 142.359 -142.706 192.002C-144.642 197.062 -142.001 202.671 -136.931 204.582L-43.8853 239.667C-38.6187 241.653 -32.776 238.89 -30.6431 233.681C-18.9016 205.007 -0.24273 179.847 23.7113 160.519C50.3065 139.059 82.3922 125.623 116.419 121.698C150.445 117.773 185.086 123.511 216.508 138.279C244.919 151.63 269.698 171.892 288.638 197.166C291.965 201.605 298.195 202.829 302.78 199.707L383.569 144.7Z"
+              fill="url(#paint0_linear_1_18476)"
+            />
+            <defs>
+              <linearGradient
+                id="paint0_linear_1_18476"
+                x1="367.283"
+                y1="166.433"
+                x2="-30.7678"
+                y2="93.8939"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stop-color="#010205" />
+                <stop offset="1" stop-color="#8DA7F3" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div class="absolute z-0 bottom-0 right-0" v-else>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="104"
+            height="237"
+            viewBox="0 0 104 237"
+            fill="none"
+          >
+            <path
+              opacity="0.2"
+              d="M143.736 13.4996C142.646 4.83943 134.793 -1.42678 126.237 0.301661C102.61 5.07492 80.3814 14.7585 61.2634 28.6977C38.0037 45.6565 20.255 68.2534 9.98076 93.9882C-0.293461 119.723 -2.69265 147.593 3.04863 174.514C7.78459 196.721 17.9074 217.568 32.5691 235.509C37.8672 241.992 47.4287 242.317 53.7891 236.872L75.2277 218.521C82.2989 212.469 82.591 201.73 77.3705 194.024C71.0213 184.652 66.5429 174.242 64.2075 163.291C60.6982 146.836 62.1647 129.801 68.4446 114.071C74.7246 98.3414 85.5732 84.5294 99.7903 74.1636C109.709 66.932 120.997 61.5742 133.015 58.3351C141.652 56.0074 148.084 48.0603 146.968 39.1853L143.736 13.4996Z"
+              fill="url(#paint0_linear_479_4150)"
+            />
+            <defs>
+              <linearGradient
+                id="paint0_linear_479_4150"
+                x1="148.464"
+                y1="14.7658"
+                x2="28.3669"
+                y2="177.577"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stop-color="#010205" />
+                <stop offset="1" stop-color="#8DA7F3" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+
+        <!-- Form inputs -->
         <InputField
           :label="t('Имя')"
           :placeholder="t('Введите ваше имя')"
           v-model="form.name"
           id="name"
+          :class="{ 'z-10': true, 'col-span-2': $isMobile }"
         />
         <InputField
           :label="t('Адрес электронной почты')"
@@ -97,7 +185,9 @@
           v-model="form.email"
           id="email"
           :error="emailError"
+          :class="{ 'z-10': true, 'col-span-2': $isMobile }"
         />
+
         <InputField
           :label="t('Тема')"
           :placeholder="t('Введите тему')"
@@ -106,9 +196,9 @@
           class="col-span-2"
         />
         <div class="mb-4 col-span-2">
-          <label for="message" class="block text-sm font-medium mb-1"
-            >Сообщение</label
-          >
+          <label for="message" class="block text-sm font-medium mb-1">{{
+            t("Сообщение")
+          }}</label>
           <textarea
             id="message"
             v-model="form.message"
@@ -125,13 +215,39 @@
         </div>
         <button
           @click="submitForm"
-          class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-full font-semibold"
+          class="z-10 flex w-[249px] justify-between px-[32px] py-[17px] bg-[#246FFF] text-white rounded-full text-[16px] transition duration-300 ease-in-out hover:bg-white hover:text-[#246FFF]"
         >
           {{ t("Оставьте заявку") }}
+          <svg
+            class=""
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+          >
+            <path
+              d="M19.999 12L3.99926 12"
+              stroke="white"
+              stroke-width="1.5"
+              stroke-linecap="square"
+            />
+            <path
+              d="M14.3394 17.66C14.3394 14.7503 16.9019 12 19.9994 12"
+              stroke="white"
+              stroke-width="1.5"
+              stroke-linecap="square"
+            />
+            <path
+              d="M14.3394 6.33995C14.3394 9.2497 16.9019 12 19.9994 12"
+              stroke="white"
+              stroke-width="1.5"
+              stroke-linecap="square"
+            />
+          </svg>
         </button>
       </div>
-
-      <div style="position: relative; overflow: hidden" class="rounded-2xl">
+      <div style="position: relative; overflow: hidden" class="rounded-[20px]">
         <a
           href="https://yandex.uz/maps/org/webase/12440057066/?utm_medium=mapframe&utm_source=maps"
           style="color: #eee; font-size: 12px; position: absolute; top: 0px"
@@ -157,6 +273,7 @@
 import { reactive, ref } from "vue";
 import { useI18n } from "vue-i18n";
 const { t } = useI18n();
+const { $isMobile } = useNuxtApp();
 
 const form = reactive({
   name: "",
@@ -170,11 +287,31 @@ const emailError = ref("");
 
 function submitForm() {
   if (!form.email.includes("@")) {
-    emailError.value = "Введите корректный email";
+    emailError.value = t("Введите корректный email");
     return;
   }
+
+  if (!form.agree) {
+    alert(t("Вы должны принять условия и положения."));
+    return;
+  }
+
   emailError.value = "";
-  // Further form submission logic
-  alert("Form submitted successfully!");
+
+  const mailtoLink = `mailto:webaseuz@gmail.com?subject=${encodeURIComponent(
+    form.subject
+  )}&body=${encodeURIComponent(
+    `Имя: ${form.name}\nEmail: ${form.email}\nСообщение: ${form.message}`
+  )}`;
+
+  window.location.href = mailtoLink;
+
+  form.name = "";
+  form.email = "";
+  form.subject = "";
+  form.message = "";
+  form.agree = false;
+
+  alert(t("Ваше сообщение успешно отправлено!"));
 }
 </script>

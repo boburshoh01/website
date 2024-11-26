@@ -1,7 +1,16 @@
 <template>
-  <section class="flex flex-col md:flex-row mt-16">
-    <MainContent />
-    <StatsSection />
+  <section
+    class="grid gap-8 mt-[80px]"
+    style="grid-template-columns: 2.2fr 1.8fr"
+  >
+    <!-- Main Content -->
+    <div>
+      <MainContent />
+    </div>
+    <!-- Stats Section -->
+    <div>
+      <StatsSection />
+    </div>
   </section>
 </template>
 

@@ -11,7 +11,7 @@ export default defineNuxtConfig({
         { name: 'robots', content: 'index, follow' } // Allows search engines to index the site
       ],
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        { rel: 'icon', type: 'image/svg', href: '/favicon.svg' },
         { rel: 'canonical', href: 'https://webase.uz' } // Canonical link to avoid duplicate content
       ]
     }
@@ -28,10 +28,10 @@ export default defineNuxtConfig({
         langDir: "locales",
         defaultLocale: "uz_latn",
         locales: [
-          { code: "en", name: "English", file: "en.json" },
-          { code: "uz_latn", name: "O'zbek", file: "uz_latn.json" },
-          { code: "uz_cryl", name: "Ўзбек", file: "uz_cryl.json" },
-          { code: "ru", name: "Русский", file: "ru.json" },
+          { code: "uz_latn", name: "O'zbek", shortName: "UZ", file: "uz_latn.json" },
+          { code: "en", name: "English", shortName: "EN", file: "en.json" },
+          { code: "uz_cryl", name: "Ўзбек", shortName: "УЗ", file: "uz_cryl.json" },
+          { code: "ru", name: "Русский", shortName: "RU", file: "ru.json" },
         ],
 
       },
