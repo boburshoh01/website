@@ -1,6 +1,7 @@
 <template>
   <div
-    class="p-[20px] sm:p-[130px] bg-gradient-to-r from-black to-blue-950 text-white rounded-[32px] relative"
+    class="p-[20px] sm:px-[126px] py-[80px] text-white rounded-[32px] relative"
+    style="background: linear-gradient(90deg, #010205 3.63%, #152b6b 151.6%)"
   >
     <div class="absolute z-0 top-0 right-0">
       <svg

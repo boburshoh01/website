@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- Grid Layout for Content and Image -->
-    <div class="flex justify-between gap-7">
+    <div class="flex justify-between gap-[55px]">
       <!-- Text Content -->
       <div class="">
         <h2 class="text-[24px] sm:text-[36px] font-bold mb-6">
@@ -48,7 +48,7 @@
         <img
           src="~assets/images/project_management.png"
           alt="Project Management"
-          class="object-cover max-w-full h-auto rounded-xl overflow-hidden"
+          class="object-cover max-w-full h-full rounded-xl overflow-hidden"
         />
       </div>
     </div>

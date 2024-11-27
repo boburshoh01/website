@@ -1,16 +1,16 @@
 <template>
-  <div class="flex flex-col justify-center h-full space-y-5">
-    <h1 class="text-4xl sm:text-[28px] leading-snug sm:leading-tight">
+  <div class="flex flex-col h-full space-y-5">
+    <h1 class="sm:text-[60px] text-[28px] leading-snug sm:leading-tight">
       {{ t("Опережайте события благодаря нашему перспективному мышлению.") }}
     </h1>
-    <p class="text-base sm:text-[14px] text-gray-400 mt-4">
+    <p class="text-base sm:text-[14px] text-gray-400 mt-[20px]">
       {{ t("Опережайте события благодаря нашему перспективному мышлению.") }}
     </p>
 
     <div class="flex flex-row">
       <div class="mr-5 relative">
         <img
-          class="max-w-[200px] animate-slide-right"
+          class="sm:max-w-[200px] max-w-[164px] animate-slide-right"
           src="~assets/images/triangleimg.png"
           alt=""
         />

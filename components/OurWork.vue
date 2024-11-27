@@ -1,11 +1,11 @@
 <template>
   <div>
     <!-- Header Section -->
-    <div class="mb-8 sm:flex animate-slide-right opacity-0">
+    <div class="mb-8 sm:flex sm:gap-6 animate-slide-right opacity-0">
       <h2 class="text-[24px] sm:text-[48px] font-medium">
         {{ t("Обеспечьте лучший сервис, используя нестандартные идеи") }}
       </h2>
-      <p class="text-[14px] mt-4 text-gray-400 max-w-2xl mx-auto">
+      <p class="text-[14px] mt-4 text-gray-400 max-w-[693px]">
         {{
           t(
             "Webase действительно является крупной IT-компанией. Она активно работает в сфере информационных технологий и предоставляет различные услуги и решения для бизнеса. В последние годы компания значительно расширила свои масштабы и укрепила свои позиции на рынке, что подтверждается её включением в различные рейтинги IT-компаний."
@@ -15,10 +15,10 @@
     </div>
 
     <!-- Main Content Section with Custom Column Layout -->
-    <div class="grid grid-cols-12 gap-6">
+    <div class="grid grid-cols-12 gap-[61px]">
       <!-- Left Card (Projects Completed) -->
       <div
-        class="bg-gray-900 text-white rounded-3xl p-6 flex flex-col justify-between col-span-12 md:col-span-3 relative animate-slide-left opacity-0 delay-500"
+        class="bg-gray-900 text-white rounded-[24px] p-[48px] col-span-12 md:col-span-4 relative animate-slide-left opacity-0 delay-500"
       >
         <div class="absolute top-0 right-0">
           <svg
@@ -78,16 +78,19 @@
             </defs>
           </svg>
         </div>
+
         <div>
-          <div class="text-[40px] sm:text-[90px] font-bold">
+          <div class="text-[40px] sm:text-[90px] font-bold leading-none">
             20<span class="text-blue-500">+</span>
           </div>
-          <p class="mt-2 text-[14px] sm:text-[20px] text-gray-400">
+
+          <p class="mt-[15px] text-[14px] sm:text-[20px] text-gray-400">
             {{ t("Проект завершен великолепно") }}
           </p>
         </div>
+
         <!-- Avatars Section -->
-        <div class="flex items-center mt-4">
+        <div class="flex items-center mt-[50px]">
           <div class="flex -space-x-1">
             <img
               class="w-[40px] h-[40px] sm:w-full sm:h-auto rounded-full border-2 border-gray-900"
@@ -116,7 +119,7 @@
 
       <!-- Right Card (How We Work) -->
       <div
-        class="relative col-span-12 md:col-span-9 animate-slide-right rounded-[16px] sm:rounded-[40px] opacity-0 delay-1000"
+        class="relative col-span-12 md:col-span-8 animate-slide-right rounded-[16px] sm:rounded-[40px] opacity-0 delay-1000"
       >
         <img
           class="rounded-[16px] sm:rounded-[40px] object-cover h-full w-full"
@@ -127,7 +130,7 @@
         <div
           class="absolute inset-0 bg-black bg-opacity-5 rounded-[16px] sm:rounded-[40px] flex items-center justify-center"
         >
-          <p class="text-white text-[24px] sm:text-[48px] font-bold">
+          <p class="text-white text-[24px] sm:text-[48px] font-normal">
             {{ t("КАК МЫ РАБОТАЕМ") }}
           </p>
         </div>
@@ -135,7 +138,7 @@
         <button class="absolute -bottom-0.5 -right-0.5 rounded-full">
           <img
             src="~assets/images/play.png"
-            class="w-[40px] h-[40px] sm:w-16 sm:h-16"
+            class="w-[40px] h-[40px] sm:w-20 sm:h-20"
             alt=""
           />
         </button>

@@ -144,7 +144,7 @@
         </ProcessCard>
         <ProcessCard
           :title="t('Разработка с нуля')"
-          class="col-start-1 col-span-2"
+          :class="{ 'col-span-2': $isMobile }"
           :description="
             t('Вне зависимости от типа и технологической сложности решения')
           "
@@ -165,6 +165,7 @@
         </ProcessCard>
       </div>
       <svg
+        v-if="!$isMobile"
         class="w-full lg:max-w-[1400px] md:max-w-[1200px] sm:max-w-[700px]"
         width="1400"
         height="82"
@@ -185,16 +186,17 @@
       </svg>
 
       <!-- Centered Logo with Arrows -->
-      <div class="flex justify-center items-center">
+      <div class="flex justify-center py-10 sm:py-0 items-center mx-auto">
         <img
           src="~assets/images/logo.png"
           alt="WEBASE Logo"
-          class="w-64 h-32 object-contain"
+          class="object-contain"
         />
       </div>
 
       <!-- Bottom Row of Cards -->
       <svg
+        v-if="!$isMobile"
         class="w-full lg:max-w-[1400px] md:max-w-[1200px] sm:max-w-[700px]"
         width="1400"
         height="82"
@@ -216,7 +218,7 @@
 
       <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
         <ProcessCard
-          class="col-start-1 col-span-2"
+          :class="{ 'col-span-2': $isMobile }"
           :title="t('Разработка мобильных проектов')"
           :description="
             t('Вне зависимости от типа и технологической сложности решения')

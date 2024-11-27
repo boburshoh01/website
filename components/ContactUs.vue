@@ -4,7 +4,7 @@
       <h2 class="text-[24px] sm:text-[48px] font-bold mb-4">
         {{ t("Связаться с нами") }}
       </h2>
-      <p class="text-gray-600 mx-auto" v-if="!$isMobile">
+      <p class="text-gray-600 mx-auto w-[80%]" v-if="!$isMobile">
         {{
           t(
             "Вне зависимости от типа и технологической сложности решения, мы обеспечим качественную реализацию функциональности, высокую доступность и производительность системы, а также привлекательный дизайн и безупречное удобство пользования."
@@ -81,9 +81,12 @@
         </template>
       </ContactCard>
     </div>
-    <div class="grid grid-col-1 md:grid-cols-2 gap-4">
+    <div class="grid grid-col-1 md:grid-cols-2 gap-[20px]">
       <div
-        class="relative grid grid-cols-1 md:grid-cols-2 gap-6 bg-gradient-to-r from-black to-blue-950 p-9 text-white rounded-[24px]"
+        class="relative grid grid-cols-1 md:grid-cols-2 gap-[20px] p-9 text-white rounded-[24px]"
+        style="
+          background: linear-gradient(90deg, #010205 3.63%, #152b6b 151.6%);
+        "
       >
         <div class="absolute z-0 top-0 right-0">
           <svg

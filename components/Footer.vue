@@ -7,7 +7,7 @@
     >
       <!-- Social Media Links -->
       <div class="flex justify-center sm:justify-normal flex-wrap gap-4">
-        <p class="mb-2 text-center text-[#ABADB3] sm:text-gray-100 text-[20px]">
+        <p class="mb-2 text-center text-[#ABADB3] text-[20px]">
           {{ t("Наши социальные сети:") }}
         </p>
         <div class="grid grid-cols-3 gap-4">
@@ -36,10 +36,10 @@
       <div
         class="mt-6 md:mt-0 flex flex-col sm:flex-row items-center sm:justify-normal"
       >
-        <p class="sm:mr-8 text-[#ABADB3] sm:text-gray-100 text-[20px]">
+        <p class="sm:mr-8 text-[#ABADB3] sm:text-[#999] text-[20px]">
           {{ t("Наш адрес:") }}
         </p>
-        <p class="text-center">
+        <p class="text-center text-[24px]">
           {{ t("Массив Караташ, д. 106Шайхонтохурский р.") }}
         </p>
       </div>
@@ -62,7 +62,7 @@
 
     <!-- Main Message -->
     <div class="text-center mb-6" v-if="!$isMobile">
-      <p class="text-lg font-semibold">
+      <p class="text-[32px] font-semibold">
         {{ t("ДАВАЙТЕ РАЗРАБОТАЕМ ПЛАН И ДОБЬЕМСЯ РЕАЛЬНЫХ РЕЗУЛЬТАТОВ.") }}
         <br />
         {{ t("ДАВАЙТЕ СДЕЛАЕМ ЭТО ПО-КРУПНОМУ") }}
@@ -72,7 +72,8 @@
     <!-- Bottom Section -->
     <div
       v-if="!$isMobile"
-      class="flex flex-col md:flex-row justify-between items-center text-[12px] sm:text-[20px] border-t border-gray-700 pt-4"
+      class="flex flex-col md:flex-row justify-between items-center text-[12px] sm:text-[20px] pt-4"
+      style="border-top: 1px solid rgba(255, 255, 255, 0.32)"
     >
       <p class="text-[#ABADB3] text-[12px] sm:text-[20px]">© 2024, Webase</p>
       <a href="#" class="hover:underline text-[12px] sm:text-[20px]">{{

@@ -5,7 +5,7 @@
         {{ t("Почему выбрали нас?") }}
       </h2>
       <p
-        class="text-center text-gray-600 max-w-2xl mx-auto mb-10"
+        class="text-center text-gray-600 max-w-[994px] mx-auto mb-10"
         v-if="!$isMobile"
       >
         {{
@@ -31,7 +31,7 @@
         :title="t('Эксклюзивность')"
         :description="
           t(
-            'Специальная команда разработчиков полностью погружается в проект клиента, подстраиваясь под его бизнес-процессы и требования с учетом отраслевых особенностей компании заказчика.'
+            'Специальная команда разработчиков полностью погружается в проект клиента, подстраиваясь под его бизнес-процессы и требования с учетом отраслевых особенностей компании заказчика с учетом доменного опыта и специфических технических навыков каждого из участников, что позволяет достичь высокой эффективности.'
           )
         "
         :image="sixedge"
@@ -42,7 +42,7 @@
         :title="t('Оптимизация затрат')"
         :description="
           t(
-            'Сотрудничая с профессиональным поставщиком услуг по разработке программного обеспечения, вы не несете затрат на поиск, привлечение и подготовку собственной ИТ-команды.'
+            'Сотрудничая с профессиональным поставщиком услуг по разработке программного обеспечения, Вы не несете затрат на поиск, привлечение и подготовку собственной ИТ-команды, а получаете незамедлительный доступ к высококвалифицированным специалистам различного профиля. Мы предложим наиболее выгодную модель сотрудничества и возьмем на себя все работы по технической реализации Вашей бизнес-идеи.'
           )
         "
         :image="sale"
@@ -51,7 +51,8 @@
     </div>
 
     <div
-      class="relative bg-gradient-to-r from-black to-blue-950 text-white rounded-[32px] p-16 mt-10"
+      class="relative text-white rounded-[32px] p-16 mt-10"
+      style="background: linear-gradient(90deg, #010205 3.63%, #152b6b 151.6%)"
     >
       <!-- Top SVG -->
       <div class="absolute top-0 right-0">
@@ -118,14 +119,14 @@
           <span class="text-[64px] font-bold">9 mln</span>
           <span class="text-gray-300 text-[20px]">{{ t("Клиенты") }}</span>
         </div>
-        <div class="hidden md:block border-l border-gray-500 mx-auto"></div>
+        <div class="hidden md:block border-l border-[#464E75] mx-auto"></div>
 
         <!-- Statistic 2 -->
         <div class="flex flex-col my-auto col-span-2">
           <span class="text-[64px] font-bold">20</span>
           <span class="text-gray-300 text-[20px]">{{ t("Проекты") }}</span>
         </div>
-        <div class="hidden md:block border-l border-gray-500 mx-auto"></div>
+        <div class="hidden md:block border-l border-[#464E75] mx-auto"></div>
 
         <!-- Statistic 3 -->
         <div class="flex flex-col my-auto col-span-2">
@@ -134,7 +135,7 @@
             t("Лет на рынке разработки программного обеспечения")
           }}</span>
         </div>
-        <div class="hidden md:block border-l border-gray-500 mx-auto"></div>
+        <div class="hidden md:block border-l border-[#464E75] mx-auto"></div>
 
         <!-- Statistic 4 -->
         <div class="flex flex-col my-auto col-span-2">

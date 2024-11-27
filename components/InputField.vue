@@ -1,6 +1,6 @@
 <template>
-  <div class="mb-4">
-    <label v-if="label" :for="id" class="block text-sm font-medium mb-1">{{
+  <div>
+    <label v-if="label" :for="id" class="block text-[14px] font-light mb-1">{{
       label
     }}</label>
     <input

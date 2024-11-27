@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col justify-center h-full space-y-5">
+  <div class="flex flex-col h-full space-y-5">
     <h1
       class="text-4xl sm:text-[60px] leading-snug sm:leading-tight font-medium"
     >
@@ -8,7 +8,9 @@
     <p class="text-base sm:text-[24px] text-gray-400 mt-4">
       {{ t("Опережайте события благодаря нашему перспективному мышлению.") }}
     </p>
-    <div class="flex space-x-4 pt-16 opacity-0 animate-fade-in delay-1000">
+    <div
+      class="flex items-center gap-[25px] space-x-4 pt-16 opacity-0 animate-fade-in delay-1000"
+    >
       <button
         @click="scrollToSection('#contacts')"
         class="flex px-[32px] py-[17px] bg-black text-white rounded-full text-[16px] transition duration-300 ease-in-out hover:bg-[#246FFF]"
@@ -44,7 +46,7 @@
       </button>
       <button
         @click="scrollToSection('#portfolio')"
-        class="px-6 py-0 bg-transparent border-b border-slate-950 text-black hover:border-[#246FFF] text-[16px] transition duration-300 ease-in-out"
+        class="h-min bg-transparent border-b border-slate-950 text-black hover:border-[#246FFF] text-[16px] transition duration-300 ease-in-out"
       >
         {{ t("Посмотреть наши кейсы") }}
       </button>

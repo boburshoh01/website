@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col md:flex-row justify-between items-center gap-20 my-8"
+    class="flex flex-col md:flex-row justify-between items-center gap-[95px] my-8"
   >
     <!-- Image Section -->
     <div

@@ -90,10 +90,9 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
 const { t } = useI18n();
-const { $isMobile } = useNuxtApp();
 
 useHead({
-  title: "About Us - Webase IT Solutions",
+  title: "Webase IT Solutions",
   meta: [
     {
       name: "description",

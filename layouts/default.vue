@@ -15,7 +15,7 @@
       <Po class="mt-20 scroll-section mx-[16px] sm:mx-[150px]" />
       <OurServices class="mt-20 scroll-section mx-[16px]" id="portfolio" />
       <WhyWe
-        class="mt-20 scroll-section mx-[16px] sm:mx-[150px]"
+        class="mt-[100px] scroll-section mx-[16px] sm:mx-[150px]"
         id="why_us"
         v-if="!$isMobile"
       />

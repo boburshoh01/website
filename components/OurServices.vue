@@ -28,14 +28,14 @@
       <!-- Desktop uchun Button'lar -->
       <div
         v-else
-        class="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 mb-8"
+        class="grid lg:grid-cols-5 md:grid-cols-2 sm:grid-cols-1 gap-4 mb-8"
       >
         <button
           v-for="category in categories"
           :key="category.id"
           @click="setActiveCategory(category.id)"
           :class="[
-            'px-4 py-2 rounded-full font-semibold transition-all min-w-[290px]',
+            'px-[20px] py-[14px] rounded-full text-[16px] font-semibold transition-all min-w-[290px]',
             activeCategory === category.id
               ? 'bg-[#246fff] text-white'
               : 'bg-transparent border hover:border-[#246FFF] text-gray-300',
@@ -48,7 +48,7 @@
       <!-- Case Studies with Hover Effect -->
       <div
         ref="scrollContainer"
-        class="overflow-x-auto whitespace-nowrap scroll-smooth hide-sc relative"
+        class="overflow-x-auto whitespace-nowrap scroll-smooth hide-sc relative !px-0"
       >
         <div ref="scrollContent" class="inline-flex space-x-6">
           <div

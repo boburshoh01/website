@@ -26,7 +26,8 @@
       </div>
     </div>
     <div
-      class="relative bg-gradient-to-r from-black to-blue-950 text-white rounded-3xl p-[36px] mt-[24px] overflow-hidden"
+      class="relative text-white rounded-3xl px-[36px] py-[26px] mt-[24px] overflow-hidden"
+      style="background: linear-gradient(90deg, #010205 3.63%, #152b6b 100%)"
     >
       <!-- Top SVG -->
       <div class="absolute top-0 left-16">
@@ -93,7 +94,7 @@
         ----- {{ t("Увеличивайте трафик и продажи") }}
       </p>
       <div class="relative flex z-10">
-        <p class="text-[36px] font-semibold mt-8 max-w-[75%]">
+        <p class="text-[36px] font-semibold mt-8 max-w-[60%]">
           {{ t("Увеличивайте трафик и продажи продукции") }}
         </p>
         <img
