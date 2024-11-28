@@ -144,7 +144,7 @@
         </ProcessCard>
         <ProcessCard
           :title="t('Разработка с нуля')"
-          :class="{ 'col-span-2': $isMobile }"
+          class="col-span-2 sm:col-span-1"
           :description="
             t('Вне зависимости от типа и технологической сложности решения')
           "
@@ -190,7 +190,7 @@
         <img
           src="~assets/images/logo.png"
           alt="WEBASE Logo"
-          class="object-contain"
+          class="object-contain w-[425px] h-[74px] bg-white rounded-lg px-[14px] py-[8px]"
         />
       </div>
 
@@ -218,7 +218,7 @@
 
       <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
         <ProcessCard
-          :class="{ 'col-span-2': $isMobile }"
+          class="col-span-2 sm:col-span-1"
           :title="t('Разработка мобильных проектов')"
           :description="
             t('Вне зависимости от типа и технологической сложности решения')

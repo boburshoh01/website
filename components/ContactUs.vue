@@ -179,7 +179,7 @@
           :placeholder="t('Введите ваше имя')"
           v-model="form.name"
           id="name"
-          :class="{ 'z-10': true, 'col-span-2': $isMobile }"
+          :class="{ 'z-10': true, '!col-span-2': $isMobile }"
         />
         <InputField
           :label="t('Адрес электронной почты')"
@@ -188,7 +188,7 @@
           v-model="form.email"
           id="email"
           :error="emailError"
-          :class="{ 'z-10': true, 'col-span-2': $isMobile }"
+          :class="{ 'z-10': true, '!col-span-2': $isMobile }"
         />
 
         <InputField

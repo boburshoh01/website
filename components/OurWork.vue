@@ -15,10 +15,11 @@
     </div>
 
     <!-- Main Content Section with Custom Column Layout -->
-    <div class="grid grid-cols-12 gap-[61px]">
+    <div class="grid grid-cols-12 sm:gap-[61px]">
       <!-- Left Card (Projects Completed) -->
       <div
-        class="bg-gray-900 text-white rounded-[24px] p-[48px] col-span-12 md:col-span-4 relative animate-slide-left opacity-0 delay-500"
+        class="bg-gray-900 text-white rounded-[24px] p-[48px] !col-span-12 md:!col-span-4 relative animate-slide-left opacity-0 delay-500"
+        :class="{ '!px-[24px] !py-[40px]': $isMobile }"
       >
         <div class="absolute top-0 right-0">
           <svg
@@ -90,7 +91,7 @@
         </div>
 
         <!-- Avatars Section -->
-        <div class="flex items-center mt-[50px]">
+        <div class="flex items-center mt-[20px] sm:mt-[50px]">
           <div class="flex -space-x-1">
             <img
               class="w-[40px] h-[40px] sm:w-full sm:h-auto rounded-full border-2 border-gray-900"
@@ -119,6 +120,7 @@
 
       <!-- Right Card (How We Work) -->
       <div
+        :class="{ 'mt-[16px] h-[200px]': $isMobile }"
         class="relative col-span-12 md:col-span-8 animate-slide-right rounded-[16px] sm:rounded-[40px] opacity-0 delay-1000"
       >
         <img

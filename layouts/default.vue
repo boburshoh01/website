@@ -24,7 +24,7 @@
         id="development_cycle"
       />
       <ContactUs id="contacts" class="scroll-section mx-[16px] sm:mx-[150px]" />
-      <Footer class="mt-10 mx-[16px]" />
+      <Footer class="mt-10 mx-[16px] mb-[24px]" />
       <NuxtPage />
     </div>
   </div>

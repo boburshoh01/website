@@ -227,17 +227,17 @@ const startInfiniteScroll = () => {
   scrollInterval = setInterval(() => {
     if (scrollContainer.value) {
       const container = scrollContainer.value;
-      const maxScrollLeft = container.scrollWidth / 2; // Half the content width
+      const maxScrollLeft = container.scrollWidth / 2; // Half the content width (since you doubled the content)
 
       if (container.scrollLeft >= maxScrollLeft) {
-        // Reset scroll to the start
+        // Reset scroll to the start of the second content block to create seamless scrolling
         container.scrollLeft = 0;
       } else {
-        // Increment scroll position
-        container.scrollLeft += 2; // Adjust speed here
+        // Increment scroll position smoothly
+        container.scrollLeft += 2; // Adjust the speed as needed
       }
     }
-  }, 20); // Adjust scroll interval speed for smooth scrolling
+  }, 20); // This controls the scrolling speed, you can adjust the value to make it smoother or faster
 };
 
 const stopInfiniteScroll = () => {
@@ -257,24 +257,26 @@ onUnmounted(() => {
 ::-webkit-scrollbar {
   display: none;
 }
+
 .scroll-smooth {
-  scroll-behavior: smooth;
+  scroll-behavior: smooth; /* This makes the scrolling smooth */
 }
+
 .custom-select {
-  background-color: transparent; /* Transparent fon */
-  color: white; /* Matn rangini oq qilish */
-  appearance: none; /* Default stylingni o'chirish (iOS, Android uchun) */
+  background-color: transparent; /* Transparent background */
+  color: white; /* White text color */
+  appearance: none; /* Remove default styling */
 }
 
-/* Dropdown menyu (option) styling */
+/* Styling for the dropdown options */
 .custom-select option {
-  background-color: rgba(0, 0, 0, 0.8); /* Oqimsimon qora fon */
-  color: white; /* Matnni oq rangda ko'rsatish */
+  background-color: rgba(0, 0, 0, 0.8); /* Dark background for options */
+  color: white; /* White text color */
 }
 
-/* Focus qilinganida border rangini o'zgartirish */
+/* Focus styling for the custom select */
 .custom-select:focus {
-  outline: none; /* Default outline'ni olib tashlash */
-  border-color: #246fff; /* Fokus border rangi */
+  outline: none; /* Remove default outline */
+  border-color: #246fff; /* Focus border color */
 }
 </style>
