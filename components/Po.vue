@@ -7,6 +7,7 @@
         <h2 class="text-[24px] sm:text-[36px] font-bold mb-6">
           {{ t("Обеспечиваем прозрачное управление процессами разработки ПО") }}
         </h2>
+
         <div v-if="$isMobile">
           <img
             src="~assets/images/project_management.png"
@@ -57,6 +58,7 @@
 
 <script setup>
 import { useI18n } from "vue-i18n";
+
 const { t } = useI18n();
 const { $isMobile } = useNuxtApp();
 </script>

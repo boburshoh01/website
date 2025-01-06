@@ -18,8 +18,7 @@
     <div class="grid grid-cols-12 sm:gap-[61px]">
       <!-- Left Card (Projects Completed) -->
       <div
-        class="bg-gray-900 text-white rounded-[24px] p-[48px] !col-span-12 md:!col-span-4 relative animate-slide-left opacity-0 delay-500"
-        :class="{ '!px-[24px] !py-[40px]': $isMobile }"
+        class="bg-gray-900 text-white rounded-[24px] sm:p-[48px] px-[24px] py-[40px] col-span-12 md:col-span-4 relative animate-slide-left opacity-0 delay-500"
       >
         <div class="absolute top-0 right-0">
           <svg
@@ -120,8 +119,7 @@
 
       <!-- Right Card (How We Work) -->
       <div
-        :class="{ 'mt-[16px] h-[200px]': $isMobile }"
-        class="relative col-span-12 md:col-span-8 animate-slide-right rounded-[16px] sm:rounded-[40px] opacity-0 delay-1000"
+        class="relative col-span-12 md:col-span-8 animate-slide-right rounded-[16px] mt-[16px] sm:mt-[0px] h-[200px] sm:h-auto sm:rounded-[40px] opacity-0 delay-1000"
       >
         <img
           class="rounded-[16px] sm:rounded-[40px] object-cover h-full w-full"
@@ -151,7 +149,9 @@
 
 <script setup>
 import { useI18n } from "vue-i18n";
+
 const { t } = useI18n();
+const { $isMobile } = useNuxtApp();
 </script>
 
 <style>

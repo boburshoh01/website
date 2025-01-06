@@ -152,6 +152,7 @@ import sale from "@/assets/gifs/saleanimation.gif";
 import sixedge from "@/assets/gifs/sixedgeanimation.gif";
 import pen from "@/assets/gifs/penanimation.gif";
 import { useI18n } from "vue-i18n";
+
 const { t } = useI18n();
 const { $isMobile } = useNuxtApp();
 </script>

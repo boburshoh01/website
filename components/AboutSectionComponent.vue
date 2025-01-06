@@ -7,7 +7,7 @@
       <svg
         xmlns="http://www.w3.org/2000/svg"
         class="w-[157px] h-[281px] sm:w-[599px] sm:h-[171px]"
-        :viewBox="$isMobile ? '0 0 200 150' : '0 0 599 171'"
+        :viewBox="'0 0 599 171'"
         fill="none"
       >
         <path

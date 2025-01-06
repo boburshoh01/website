@@ -45,7 +45,7 @@
         </div>
         <div v-else>
           <a
-            href="tel:+998974111454"
+            href="tel:+998 99 444 79 29"
             class="flex items-center border rounded-full border-[#3362FF] p-[8px]"
           >
             <svg
@@ -152,13 +152,6 @@ const { $isMobile } = useNuxtApp();
 const { t } = useI18n();
 const activeSection = ref<string | null>(null);
 const menuOpen = ref(false); // State to control menu visibility on small screens
-
-function scrollToSection(sectionId: any) {
-  const section = document.querySelector(sectionId);
-  if (section) {
-    section.scrollIntoView({ behavior: "smooth" });
-  }
-}
 
 onMounted(() => {
   const sections = [

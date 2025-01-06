@@ -4,10 +4,7 @@
     <div class="pt-16">
       <component
         :is="$isMobile ? MobileMainSection : LandingSection"
-        :class="{
-          ' mx-[16px]': $isMobile,
-          ' mx-[150px]': !$isMobile,
-        }"
+        class="mx-[16px] sm:mx-[150px]"
       />
 
       <OurWork class="mt-20 scroll-section mx-[16px] sm:mx-[150px]" />
@@ -33,6 +30,7 @@
 <script setup lang="ts">
 import MobileMainSection from "@/components/mobile/MainSection.vue";
 import LandingSection from "@/components/LandingSection.vue";
+
 const { $isMobile } = useNuxtApp();
 </script>
 

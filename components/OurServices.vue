@@ -28,14 +28,14 @@
       <!-- Desktop uchun Button'lar -->
       <div
         v-else
-        class="grid lg:grid-cols-5 md:grid-cols-2 sm:grid-cols-1 gap-4 mb-8"
+        class="grid 2xl:grid-cols-5 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 mb-8 laptopScreen"
       >
         <button
           v-for="category in categories"
           :key="category.id"
           @click="setActiveCategory(category.id)"
           :class="[
-            'px-[20px] py-[14px] rounded-full text-[16px] font-semibold transition-all min-w-[290px]',
+            'px-[20px] py-[14px] rounded-full text-[16px] font-semibold transition-all min-w-[290px] ',
             activeCategory === category.id
               ? 'bg-[#246fff] text-white'
               : 'bg-transparent border hover:border-[#246FFF] text-gray-300',
@@ -48,7 +48,7 @@
       <!-- Case Studies with Hover Effect -->
       <div
         ref="scrollContainer"
-        class="overflow-x-auto whitespace-nowrap scroll-smooth hide-sc relative !px-0"
+        class="overflow-x-auto whitespace-nowrap relative px-0"
       >
         <div ref="scrollContent" class="inline-flex space-x-6">
           <div
@@ -165,9 +165,9 @@ import shotfaktura from "@/assets/images/shotfaktura.png";
 import project from "@/assets/images/project.png";
 import project2 from "@/assets/images/project2.png";
 import project3 from "@/assets/images/project3.png";
-import { ref, computed } from "vue";
+import { ref, computed, onMounted, onUnmounted } from "vue";
 import { useI18n } from "vue-i18n";
-const { $isMobile } = useNuxtApp(); // Check for mobile
+const { $isMobile } = useNuxtApp();
 
 // Internationalization
 const { t } = useI18n();
@@ -211,10 +211,6 @@ const filteredCaseStudies = computed(() => {
     (caseStudy) => caseStudy.categoryId === activeCategory.value
   );
 });
-// Infinite scroll container and content refs
-const scrollContainer = ref(null);
-const scrollContent = ref(null);
-let scrollInterval;
 
 // Extend case studies for infinite scrolling
 const extendedCaseStudies = computed(() => {
@@ -222,34 +218,31 @@ const extendedCaseStudies = computed(() => {
   return [...filteredCaseStudies.value, ...filteredCaseStudies.value];
 });
 
-// Infinite scroll logic
-const startInfiniteScroll = () => {
-  scrollInterval = setInterval(() => {
-    if (scrollContainer.value) {
-      const container = scrollContainer.value;
-      const maxScrollLeft = container.scrollWidth / 2; // Half the content width (since you doubled the content)
+const scrollContainer = ref(null);
 
-      if (container.scrollLeft >= maxScrollLeft) {
-        // Reset scroll to the start of the second content block to create seamless scrolling
-        container.scrollLeft = 0;
-      } else {
-        // Increment scroll position smoothly
-        container.scrollLeft += 2; // Adjust the speed as needed
-      }
-    }
-  }, 20); // This controls the scrolling speed, you can adjust the value to make it smoother or faster
-};
+let scrollPosition = 0;
+let animationFrameId = null;
 
-const stopInfiniteScroll = () => {
-  if (scrollInterval) clearInterval(scrollInterval);
+const animateScroll = () => {
+  const container = scrollContainer.value;
+  if (!container) return;
+
+  const maxScrollLeft = container.scrollWidth / 2;
+  scrollPosition += 0.6; // tezlikni o'zgartirishingiz mumkin
+  if (scrollPosition >= maxScrollLeft) {
+    scrollPosition = 0;
+  }
+
+  container.scrollLeft = scrollPosition;
+  animationFrameId = requestAnimationFrame(animateScroll);
 };
 
 onMounted(() => {
-  startInfiniteScroll();
+  animationFrameId = requestAnimationFrame(animateScroll);
 });
 
 onUnmounted(() => {
-  stopInfiniteScroll();
+  if (animationFrameId) cancelAnimationFrame(animationFrameId);
 });
 </script>
 
@@ -258,25 +251,30 @@ onUnmounted(() => {
   display: none;
 }
 
-.scroll-smooth {
-  scroll-behavior: smooth; /* This makes the scrolling smooth */
-}
+/* Smooth scroll behavior olib tashlandi */
+/* .scroll-smooth {
+  scroll-behavior: smooth; 
+} */
 
 .custom-select {
-  background-color: transparent; /* Transparent background */
-  color: white; /* White text color */
-  appearance: none; /* Remove default styling */
+  background-color: transparent;
+  color: white;
+  appearance: none;
 }
 
-/* Styling for the dropdown options */
 .custom-select option {
-  background-color: rgba(0, 0, 0, 0.8); /* Dark background for options */
-  color: white; /* White text color */
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
 }
 
-/* Focus styling for the custom select */
 .custom-select:focus {
-  outline: none; /* Remove default outline */
-  border-color: #246fff; /* Focus border color */
+  outline: none;
+  border-color: #246fff;
+}
+
+@media (min-width: 1520px) and (max-width: 1540px) {
+  .laptopScreen {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 </style>

@@ -92,7 +92,6 @@
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="w-[146px] h-[277px] sm:w-[420px] sm:h-[172px]"
-            :viewBox="$isMobile ? '0 0 230 89' : '0 0 408 172'"
             viewBox="0 0 408 172"
             fill="none"
           >
@@ -116,7 +115,7 @@
             </defs>
           </svg>
         </div>
-        <div class="absolute z-0 bottom-0 left-0" v-if="!$isMobile">
+        <div class="absolute bottom-0 left-0" v-if="!$isMobile">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="388"
@@ -144,7 +143,7 @@
             </defs>
           </svg>
         </div>
-        <div class="absolute z-0 bottom-0 right-0" v-else>
+        <div class="absolute z-0 bottom-0 right-0" v-if="$isMobile">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="104"
@@ -179,7 +178,7 @@
           :placeholder="t('Введите ваше имя')"
           v-model="form.name"
           id="name"
-          :class="{ 'z-10': true, '!col-span-2': $isMobile }"
+          class="z-10 col-span-2 sm:col-span-1"
         />
         <InputField
           :label="t('Адрес электронной почты')"
@@ -188,7 +187,7 @@
           v-model="form.email"
           id="email"
           :error="emailError"
-          :class="{ 'z-10': true, '!col-span-2': $isMobile }"
+          class="z-10 col-span-2 sm:col-span-1"
         />
 
         <InputField
@@ -210,7 +209,7 @@
             class="w-full p-2 rounded-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           ></textarea>
         </div>
-        <div class="flex items-center mb-4 col-span-2">
+        <div class="flex items-center mb-4 col-span-2 z-10">
           <input type="checkbox" id="terms" v-model="form.agree" class="mr-2" />
           <label for="terms" class="text-sm">{{
             t("Я принимаю условия и положения отправки заявки")
